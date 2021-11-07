@@ -48,12 +48,6 @@ p {
     box-shadow: 0 0.2em #c2bb11, 0 0.5em rgba(0, 0, 0, 0.4);
 }
 
-@media (min-width: 768px) {
-    .button-63 {
-        font-size: 24px;
-        min-width: 196px;
-    }
-}
 
 .parent {
     margin: 0 auto;
@@ -78,4 +72,25 @@ p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 20px;
+}
+
+.car {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.cars_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.car button {
+    margin: 10px 0 0 0;
+    width: 130px;
 }

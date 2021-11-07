@@ -18,7 +18,6 @@ export interface ICarProps {
   setCount: React.Dispatch<React.SetStateAction<number>>;
   // setCarList: React.Dispatch<React.SetStateAction<ICar[]>>;
   changeModel: (id: string, value: string) => void;
-  changeWholeModel?:(e: ChangeEvent<HTMLInputElement>)=>void
 }
 
 export type CarPropsType = ICar & Omit<ICarProps, 'car'>

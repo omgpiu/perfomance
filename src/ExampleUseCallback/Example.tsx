@@ -74,9 +74,11 @@ const Cars = () => {
   //setState уже мемоизирована из коробки, ее оборачивать не во что не нужно
   const [count, setCount] = useState(0);
   const [carList, setCarList] = useState<ICar[]>(CAR_LIST);
-  const onCarClick1 = useCallback((car: string | ICar, id: string) => {
+  const onCarClick = useCallback((car: string | ICar, id: string) => {
+    //Удаляем
     // setCarList((prevState => prevState.filter(car => car.id !== id)));
-
+    //Добавляем  import Logo from '../assets/placeholder.jpg';
+    // setCarList((prevState => [...prevState, {id: String(new Date()), hp: 100, model: 'Бибика', img: Logo}]));
     if (typeof car !== 'string') {
       return console.log(car.model);
     }
@@ -90,22 +92,6 @@ const Cars = () => {
       }
       return car;
     })));
-  }, []);
-
-  console.log('carList: ', carList);
-
-  const changeWholeModel = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.getAttribute('data-parent'));
-    console.log(e.target.value);
-    const payloadId = e.target.getAttribute('data-parent');
-    const value = e.target.value;
-    setCarList((prevState => prevState.map(car => {
-      if (car.id === payloadId) {
-        car.model = value;
-      }
-      return car;
-    })));
-
   }, []);
 
 
@@ -130,7 +116,7 @@ const Cars = () => {
       Car
       <div className='hi_load_wrapper'>
         {carList.map((car => <Car key={car.id}
-                                  {...{car, onCarClick: onCarClick1, setCount, changeModel, changeWholeModel}}
+                                  {...{car, onCarClick, setCount, changeModel}}
         />))}
       </div>
       CarFragmented
@@ -140,7 +126,7 @@ const Cars = () => {
                                            id={car.id}
                                            hp={car.hp}
                                            img={car.img}
-                                           {...{onCarClick: onCarClick1, setCount, changeModel}}
+                                           {...{onCarClick, setCount, changeModel}}
         />)
         }
       </div>

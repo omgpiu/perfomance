@@ -25,11 +25,11 @@ const TestCallback: FC<ExampleType> = ({title}) => {
   );
 };
 
-const CarFragmented: FC<CarPropsType> = memo(({img, model, id, onCarClick, setState, changeModel}) => {
+const CarFragmented: FC<CarPropsType> = memo(({img, model, id, onCarClick, setCount, changeModel}) => {
   console.log(model, 'render CarFragmented');
   const onClick = () => {
     onCarClick(model, id);
-    setState(prev => prev + 1);
+    setCount(prev => prev + 1);
   };
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     changeModel(id, e.target.value);
@@ -43,11 +43,11 @@ const CarFragmented: FC<CarPropsType> = memo(({img, model, id, onCarClick, setSt
 
   );
 });
-const Car: FC<ICarProps> = memo(({car, onCarClick, setState, changeModel}) => {
+const Car: FC<ICarProps> = memo(({car, onCarClick, setCount, changeModel}) => {
     console.log(car.model, 'render Car');
     const onClick = () => {
       onCarClick(car, car.id);
-      setState(prev => prev + 1);
+      setCount(prev => prev + 1);
     };
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
       changeModel(car.id, e.target.value);
@@ -56,7 +56,7 @@ const Car: FC<ICarProps> = memo(({car, onCarClick, setState, changeModel}) => {
     return (
       <div className='card car'>
         <img src={car.img} alt={car.model} width='150px' height='110px' />
-        <input type='text' value={car.model} onChange={onChange} maxLength={10} />
+        <input type='text' value={car.model} data-parent={car.id} onChange={onChange} maxLength={10} />
         <button onClick={onClick} className='btn b-1'>{car.model}</button>
       </div>
 
@@ -72,10 +72,10 @@ const Car: FC<ICarProps> = memo(({car, onCarClick, setState, changeModel}) => {
 // }
 const Cars = () => {
   //setState уже мемоизирована из коробки, ее оборачивать не во что не нужно
-  const [state, setState] = useState(0);
+  const [count, setCount] = useState(0);
   const [carList, setCarList] = useState<ICar[]>(CAR_LIST);
-  const onCarClick = useCallback((car: string | ICar, id: string) => {
-    setCarList((prevState => prevState.filter(car => car.id !== id)));
+  const onCarClick1 = useCallback((car: string | ICar, id: string) => {
+    // setCarList((prevState => prevState.filter(car => car.id !== id)));
 
     if (typeof car !== 'string') {
       return console.log(car.model);
@@ -86,6 +86,21 @@ const Cars = () => {
   const changeModel = useCallback((id: string, value: string) => {
     setCarList((prevState => prevState.map(car => {
       if (car.id === id) {
+        return {...car, model: value};
+      }
+      return car;
+    })));
+  }, []);
+
+  console.log('carList: ', carList);
+
+  const changeWholeModel = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.getAttribute('data-parent'));
+    console.log(e.target.value);
+    const payloadId = e.target.getAttribute('data-parent');
+    const value = e.target.value;
+    setCarList((prevState => prevState.map(car => {
+      if (car.id === payloadId) {
         car.model = value;
       }
       return car;
@@ -95,28 +110,27 @@ const Cars = () => {
 
 
   const onChangeTitle = (id = '1', value: string) => {
-    console.log(value);
     setCarList((prevState => prevState.map(car => {
       if (car.id === id) {
-        console.log(id);
-        console.log(car.id);
         car.model = value;
       }
       return car;
     })));
   };
+
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChangeTitle('1', e.target.value);
   };
-  console.log(carList);
+
   return (
     <div className='cars_wrapper'>
-      <div>{state}- количество кликов</div>
+      <div>{count}- количество кликов</div>
+      Меняет модель только у первого элемента
       <input type={'text'} onChange={onChange} />
       Car
       <div className='hi_load_wrapper'>
         {carList.map((car => <Car key={car.id}
-                                  {...{car, onCarClick, setState, changeModel}}
+                                  {...{car, onCarClick: onCarClick1, setCount, changeModel, changeWholeModel}}
         />))}
       </div>
       CarFragmented
@@ -126,7 +140,7 @@ const Cars = () => {
                                            id={car.id}
                                            hp={car.hp}
                                            img={car.img}
-                                           {...{onCarClick, setState, changeModel}}
+                                           {...{onCarClick: onCarClick1, setCount, changeModel}}
         />)
         }
       </div>

@@ -2,7 +2,7 @@ import Porsche from '../assets/Porsche.webp';
 import Ford from '../assets/ford.webp';
 import Kia from '../assets/Kia.webp';
 import Volkswagen from '../assets/volkswagen.webp';
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 export interface ICar {
   id: string;
@@ -15,9 +15,10 @@ export interface ICarProps {
   car: ICar;
   onCarClick: (car: ICar | string, id: string) => void;
   // state: number;
-  setState: React.Dispatch<React.SetStateAction<number>>;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
   // setCarList: React.Dispatch<React.SetStateAction<ICar[]>>;
   changeModel: (id: string, value: string) => void;
+  changeWholeModel?:(e: ChangeEvent<HTMLInputElement>)=>void
 }
 
 export type CarPropsType = ICar & Omit<ICarProps, 'car'>

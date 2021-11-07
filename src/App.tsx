@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef, useState } from 'react';
+import ExampleUseCallback from './ExampleUseCallback/Example';
+import HiLoadExample from './HiLoadExample/HiLoadExample';
+
+
+const First = ({className}: { className: string }) => {
+  return <div className={className}>
+    First
+  </div>;
+};
+const Second = ({className}: { className: string }) => {
+  const [state, setState] = useState(false);
+  return <div className={className} onClick={() => setState(!state)}>
+    <Third key='1' />
+    Second
+  </div>;
+};
+const Third = () => {
+  console.log('render Third');
+  return <div className={'third'}>
+    Third
+  </div>;
+};
+
 
 function App() {
+  let style = useRef('border1');
+  console.log('render');
+  const [state, setState] = useState(0);
+  console.log(state);
+  useEffect(() => {
+    style.current = '';
+    // setTimeout(() => style = '', 2000);
+  }, [state]);
+  useEffect(() => {
+    style.current = '';
+  }, []);
+  const a = () =>
+    <>  <First className={'first'} />
+      <Second className={'second'} />
+      <Third key={'1'} /></>;
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`parent`}>
+      <HiLoadExample />
+      <ExampleUseCallback />
     </div>
-  );
+  )
+    ;
 }
 
 export default App;

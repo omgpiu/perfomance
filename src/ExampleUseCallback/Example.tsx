@@ -25,8 +25,17 @@ const TestCallback: FC<ExampleType> = ({title}) => {
   );
 };
 
-const CarFragmented: FC<CarPropsType> = memo(({img, model, id, onCarClick, setCount, changeModel}) => {
+const CarFragmented: FC<CarPropsType> = memo(({
+                                                img,
+                                                model,
+                                                id,
+                                                onCarClick,
+                                                setCount,
+                                                changeModel,
+                                                anyNewLinkForNonPrimitive
+                                              }) => {
   console.log(model, 'render CarFragmented');
+  console.log(anyNewLinkForNonPrimitive);
   const onClick = () => {
     onCarClick(model, id);
     setCount(prev => prev + 1);
@@ -107,7 +116,7 @@ const Cars = () => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChangeTitle('1', e.target.value);
   };
-
+  const list = [{bla: 'bla'}];
   return (
     <div className='cars_wrapper'>
       <div>{count}- количество кликов</div>
@@ -122,6 +131,7 @@ const Cars = () => {
       CarFragmented
       <div className='hi_load_wrapper'>
         {carList.map(car => <CarFragmented key={car.id}
+                                           anyNewLinkForNonPrimitive={list}
                                            model={car.model}
                                            id={car.id}
                                            hp={car.hp}

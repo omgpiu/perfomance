@@ -2,7 +2,7 @@ import { ChangeEvent, FC, memo, useCallback, useState } from 'react';
 import { ExampleType } from '../types';
 import { CAR_LIST, CarPropsType, ICar, ICarProps } from './common';
 
-
+const OUTSIDE_LIST = [{bla: 'bla'}];
 //useCallback  этих случаях работать не будет
 const Test: FC<ExampleType> = ({title}) => {
   const someFunc = () => {
@@ -32,10 +32,10 @@ const CarFragmented: FC<CarPropsType> = memo(({
                                                 onCarClick,
                                                 setCount,
                                                 changeModel,
-                                                anyNewLinkForNonPrimitive
+                                                nonPrimitive
                                               }) => {
   console.log(model, 'render CarFragmented');
-  console.log(anyNewLinkForNonPrimitive);
+
   const onClick = () => {
     onCarClick(model, id);
     setCount(prev => prev + 1);
@@ -116,7 +116,8 @@ const Cars = () => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChangeTitle('1', e.target.value);
   };
-  const list = [{bla: 'bla'}];
+  const INNER_LIST = [{bla: 'bla'}];
+
   return (
     <div className='cars_wrapper'>
       <div>{count}- количество кликов</div>
@@ -125,13 +126,13 @@ const Cars = () => {
       Car
       <div className='hi_load_wrapper'>
         {carList.map((car => <Car key={car.id}
-                                  {...{car, onCarClick, setCount, changeModel}}
+                                  {...{car, onCarClick, setCount, changeModel, nonPrimitive: OUTSIDE_LIST}}
         />))}
       </div>
       CarFragmented
       <div className='hi_load_wrapper'>
         {carList.map(car => <CarFragmented key={car.id}
-                                           anyNewLinkForNonPrimitive={list}
+                                           nonPrimitive={INNER_LIST}
                                            model={car.model}
                                            id={car.id}
                                            hp={car.hp}

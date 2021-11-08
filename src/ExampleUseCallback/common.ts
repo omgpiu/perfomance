@@ -23,9 +23,6 @@ export interface ICarProps {
 
 export type CarPropsType = ICar & Omit<ICarProps, 'car'>
 
-export type CarsType = {
-  cars: ICar[]
-}
 export const CAR_LIST: ICar[] = [{
   id: '1',
   model: 'Porsche',
@@ -51,3 +48,4 @@ export const CAR_LIST: ICar[] = [{
     img: Volkswagen
   },
 ];
+export const OUTSIDE_LIST = [{id: 10}];

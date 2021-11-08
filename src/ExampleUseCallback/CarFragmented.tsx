@@ -1,5 +1,6 @@
 import { ChangeEvent, FC, memo } from 'react';
 import { CarPropsType } from './common';
+import MyButton from '../common/MyButton';
 
 const CarFragmented: FC<CarPropsType> = memo(({
                                                 img,
@@ -23,7 +24,7 @@ const CarFragmented: FC<CarPropsType> = memo(({
     <div className='card car'>
       <img src={img} alt={model} width='150px' height='110px' />
       <input type='text' value={model} onChange={onChange} maxLength={10} />
-      <button onClick={onClick} className='btn b-1'>{model}</button>
+      <MyButton title={model} onClick={onClick} />
     </div>
 
   );

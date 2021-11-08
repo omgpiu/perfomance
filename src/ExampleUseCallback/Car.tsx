@@ -1,5 +1,6 @@
 import { ChangeEvent, FC, memo } from 'react';
 import { ICarProps } from './common';
+import MyButton from '../common/MyButton';
 
 const Car: FC<ICarProps> = memo(({car, onCarClick, setCount, changeModel}) => {
   console.log(car.model, 'render Car');
@@ -15,10 +16,10 @@ const Car: FC<ICarProps> = memo(({car, onCarClick, setCount, changeModel}) => {
     <div className='card car'>
       <img src={car.img} alt={car.model} width='150px' height='110px' />
       <input type='text' value={car.model} data-parent={car.id} onChange={onChange} maxLength={10} />
-      <button onClick={onClick} className='btn b-1'>{car.model}</button>
+      <MyButton title={car.model} onClick={onClick} />
     </div>
 
   );
 });
 
-export default Car
+export default Car;

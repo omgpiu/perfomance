@@ -1,6 +1,7 @@
 import { FC, useCallback } from 'react';
 import { ExampleType } from '../types';
 import Cars from './Cars';
+import MyButton from '../common/MyButton';
 //Основная статья https://habr.com/ru/post/529950/
 
 //useCallback  этих случаях работать не будет
@@ -9,9 +10,8 @@ const Test: FC<ExampleType> = ({title}) => {
     console.log(title);
   };
   return (
-    <button onClick={someFunc} className='btn b-1'>
-      click me!
-    </button>
+    <MyButton title=' click me!' onClick={someFunc} />
+
   );
 };
 
@@ -20,9 +20,7 @@ const TestCallback: FC<ExampleType> = ({title}) => {
     console.log(title);
   }, []);
   return (
-    <button onClick={someFunc} className='btn b-1'>
-      click me!
-    </button>
+    <MyButton title=' click me!' onClick={someFunc} />
   );
 };
 

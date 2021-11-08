@@ -62,7 +62,7 @@ p {
     transition: all 1s ease-in-out;
 }
 
-.hi_load_wrapper {
+.flex-wrapper {
     display: flex;
     justify-content: space-around;
 }

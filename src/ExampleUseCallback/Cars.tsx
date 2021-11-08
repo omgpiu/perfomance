@@ -61,13 +61,13 @@ const Cars = () => {
       Меняет модель только у первого элемента
       <input type={'text'} onChange={onChange} />
       Car
-      <div className='hi_load_wrapper'>
+      <div className='flex-wrapper'>
         {carList.map((car => <Car key={car.id}
                                   {...{car, onCarClick, setCount, changeModel, nonPrimitive: OUTSIDE_LIST}}
         />))}
       </div>
       CarFragmented
-      <div className='hi_load_wrapper'>
+      <div className='flex-wrapper'>
         {carList.map(car => <CarFragmented key={car.id}
                                            nonPrimitive={MEMO_INNER_LIST}
                                            model={car.model}
@@ -79,7 +79,7 @@ const Cars = () => {
 
       </div>
       Car with rerenders
-      <div className='hi_load_wrapper'>
+      <div className='flex-wrapper'>
         {carList.map((car => <Car key={car.id}
                                   {...{car, onCarClick, setCount, changeModel, nonPrimitive: INNER_LIST}}
         />))}

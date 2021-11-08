@@ -69,7 +69,7 @@ const ExampleAppendToDom = () => {
   const changeView = () => setIsShowText(!isShowText);
 
   return (
-    <div className='hi_load_wrapper width-center'>
+    <div className='flex-wrapper width-center'>
       <div className='card car'>
         <NotAppendToDom {...{isShowText}} />
         <button className='btn b-1' onClick={changeView}>Change view</button>

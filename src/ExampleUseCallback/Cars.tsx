@@ -42,10 +42,11 @@ const Cars = () => {
   const onChangeTitle = (id = '1', value: string) => {
     setCarList((prevState => prevState.map(car => {
       if (car.id === id) {
-        car.model = value;
+        return {...car, model: value};
       }
       return car;
     })));
+
   };
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -74,8 +75,14 @@ const Cars = () => {
                                            hp={car.hp}
                                            img={car.img}
                                            {...{onCarClick, setCount, changeModel}}
-        />)
-        }
+        />)}
+
+      </div>
+      Car with rerenders
+      <div className='hi_load_wrapper'>
+        {carList.map((car => <Car key={car.id}
+                                  {...{car, onCarClick, setCount, changeModel, nonPrimitive: INNER_LIST}}
+        />))}
       </div>
     </div>
   );

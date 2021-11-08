@@ -50,8 +50,8 @@ p {
 
 
 .parent {
+    text-align: center;
     margin: 0 auto;
-
     transition: all 1s ease-in-out;
     border: 1px solid red;
     padding: 20px;
@@ -67,6 +67,10 @@ p {
     justify-content: space-around;
 }
 
+.width-center {
+    margin: 0 auto;
+    width: 400px
+}
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

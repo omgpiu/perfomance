@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
 import { ExampleType } from '../types';
 import Cars from './Cars';
-
+//Основная статья https://habr.com/ru/post/529950/
 
 //useCallback  этих случаях работать не будет
 const Test: FC<ExampleType> = ({title}) => {

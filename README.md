@@ -54,10 +54,14 @@
 
 # ОБЯЗАТЕЛЬНЫ К ПРОСМОТРУ
 
-[Видео Синяка Все ли вы знаете о React key?](https://www.youtube.com/watch?v=OtAlPwW8DNU)  
-[Видео Синяка про о React Reconciliation](https://www.youtube.com/watch?v=NPXJnKytER4)  
-[Видео Синяка Какая настоящая цена useMemo?](https://www.youtube.com/watch?v=i6DPqqbdIyw)  
-[Видео Синяка useMemo - исходники, альтернативное использование](https://www.youtube.com/watch?v=V426Pl3X6qQ)  
-[Видео Синяка React.memo это вам не useMemo](https://www.youtube.com/watch?v=Hm769uj6WPo)  
-[Видео Синяка Чем отличается SimpleMemoComponent от MemoComponent?](https://www.youtube.com/watch?v=LhZ4Xk5CZU8)  
-[Видео Синяка Станет ли memo() дэфолтным поведением реакт компонента?](https://www.youtube.com/watch?v=uEeZ2TUkOCE)  
+[Видео Синяка #1 Все ли вы знаете о React key?](https://www.youtube.com/watch?v=OtAlPwW8DNU)  
+[Видео Синяка #2 про о React Reconciliation](https://www.youtube.com/watch?v=NPXJnKytER4)  
+[Видео Синяка #3 Какая настоящая цена useMemo?](https://www.youtube.com/watch?v=i6DPqqbdIyw)  
+[Видео Синяка #4 useMemo - исходники, альтернативное использование](https://www.youtube.com/watch?v=V426Pl3X6qQ)  
+[Видео Синяка #5 React.memo это вам не useMemo](https://www.youtube.com/watch?v=Hm769uj6WPo)  
+[Видео Синяка #6 Чем отличается SimpleMemoComponent от MemoComponent?](https://www.youtube.com/watch?v=LhZ4Xk5CZU8)    
+[Видео Синяка #7 Станет ли memo() дэфолтным поведением реакт компонента?](https://www.youtube.com/watch?v=uEeZ2TUkOCE)  
+[Статья расшифровка видео #1](https://habr.com/ru/post/527596/)  
+[Статья расшифровка видео #3](https://habr.com/ru/post/544930/)  
+[Статья расшифровка видео #5 и #6](https://habr.com/ru/post/551804/)  
+  

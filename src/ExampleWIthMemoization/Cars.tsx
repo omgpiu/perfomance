@@ -3,7 +3,7 @@ import { CAR_LIST, ICar, OUTSIDE_LIST } from './common';
 import Car from './Car';
 import CarFragmented from './CarFragmented';
 
-
+//добавить пример с депенденси memo
 // Не забываем про стоимость и когда useCallback необходим : https://habr.com/ru/post/529950/comments/#comment_22379830
 // Без мемо смысла в useCallback не будет  , так же как и в мемо без useCallback в этой ситуации
 //Для правильного понимания работы с мемо, нужно развить понимание, присылаем ли мы новую ссылку на не примитив или туже самую

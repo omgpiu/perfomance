@@ -2,7 +2,7 @@ import React from 'react';
 import Example from './components/Example';
 import FirstSolution from './components/FirstSolution';
 import SecondSolution from './components/SecondSolution';
-
+//основной видос https://www.youtube.com/watch?v=JzBEbo4enQY&t=178s
 
 const HiLoadExample = () => {
   return (

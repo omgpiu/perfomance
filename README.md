@@ -5,57 +5,48 @@
 оптимизация не принесла желаемого результата, я решил создать маленькую песочницу, чтобы в разных вариантах потрогать
 руками работу с перфомансом на уровне компонент Все ссылки на статьи и видел упомянутые тут будут продублированны в
 компонентах, в конкретных случаях.  
-[Alex Sidorenko](https://alexsidorenko.com/)
+[Alex Sidorenko](https://alexsidorenko.com/) --
 [Twitter](https://twitter.com/asidorenko_) - крутые статьи  
 [АйТи Синяк он же Александр Бальцевич](https://www.youtube.com/channel/UClgj-KWiNaOo9H1rz1ISO6Q)
-[Twitter](https://twitter.com/it_sin9k) - крутые статьи и видео
+-- [Twitter](https://twitter.com/it_sin9k) - крутые статьи и видео
 
 ## Структура проекта
 
 Проект состоит из 4 основных частей
 
-### `yarn start`
+1) HiLoadExample - общий пример как работать с мемо и как можно сделать то же самое, но без него
+2) ExampleWithMemoization - более глубокие кейсы с мемо, работа со списками, применение useCallback,useMemo, внешние
+   данные,депенденси лист
+3) WithProvider - продолжение работы с мемо при работе с React.Provider
+4) AttachToDom - простые действия, как облегчить работу реакту при вариантивнов рендеринге
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Для понимания когда происходит рендер нужно установить
+расшение [ReactDevTools - Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+или
+[ReactDevTools - Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+В настройках включаем Highlight updates when components render. - если не можем
+найти [идем сюда](https://www.digitalocean.com/community/tutorials/how-to-debug-react-components-using-react-developer-tools)
+и ищем по поиску `Then select the option under General that says Highlight updates when components render.`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Ссылки на статьи по примерам
 
-### `yarn test`
+1) HiLoadExample:  
+   [Статья Дена Абрамова](https://overreacted.io/before-you-memo/)  
+   [Видео Синяка на статью Дена](https://www.youtube.com/watch?v=JzBEbo4enQY&t=178s)
+2) ExampleWithMemoization:  
+   [Статья Alex Sidorenko Ch.1](https://alexsidorenko.com/blog/react-render-always-rerenders/)  
+   [Статья Alex Sidorenko Ch.2](https://alexsidorenko.com/blog/react-render-props/)  
+   [Статья Alex Sidorenko Ch.3](https://alexsidorenko.com/blog/react-render-usememo/)  
+   [Статья Alex Sidorenko Ch.4](https://alexsidorenko.com/blog/react-render-usecallback/)  
+   [Статья Синяка](https://habr.com/ru/post/529950/)  
+   [Видео Синяка про useCallback](https://www.youtube.com/watch?v=2Wp7QPTkpms)
+   [Видео Синяка про key](https://www.youtube.com/watch?v=OtAlPwW8DNU&t=296s)
+3) WithProvider:  
+   [Статья Alex Sidorenko Ch.5](https://alexsidorenko.com/blog/react-render-context/)
+4) AttachToDom:    
+   Без видео статья будет не совсем понятна  
+   [Видео Синяка](https://www.youtube.com/watch?v=A0W2n2azH5s)  
+   [Статья Alex Sidorenko Ch.6](https://alexsidorenko.com/blog/react-render-dom/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more
-information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will
-remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right
-into your project so you have full control over them. All of the commands except `eject` will still work, but they will
-point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you
-shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in
-the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ну и не менее важная статья
+от [Kent C. Dodds](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)

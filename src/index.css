@@ -53,11 +53,30 @@ p {
 
 }
 
-
-.parent {
+.parent, .flex-wrapper, .card, .car, .flex-gap-10, .flex-gap-20, .cars_wrapper {
     display: flex;
+}
+
+.parent, .card, .car, .flex-column, .cars_wrapper {
     flex-direction: column;
-    justify-content: center;
+}
+
+.parent, .justify-center, .car_container, .car {
+    justify-content: center
+}
+
+.flex-gap-10 p, .box-shadow, .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.text-center, .flex-gap-20 p, .child {
+    text-align: center;
+}
+
+
+.parent, .flex-wrapper, .card, .car, .cars_wrapper, .align-items-center {
     align-items: center;
 }
 
@@ -68,23 +87,20 @@ p {
 .with-border {
     margin: 50px auto;
     border: 1px solid black;
-    width: 400px;
+
 }
 
 .child {
     border: 1px solid black;
     margin: 40px;
+    padding: 20px;
 }
 
 
 .flex-wrapper {
-    display: flex;
     gap: 20px;
     padding: 20px;
-
-    align-items: center;
     align-content: center;
-    justify-self: center;
 }
 
 .width-center {
@@ -99,43 +115,26 @@ p {
     gap: 40px 30px;
 }
 
+.car_container, .cars_wrapper, .flex-gap-10 {
+    gap: 10px;
+}
+
 .car_container {
     margin: 10px;
     background-color: #fff;
     display: grid;
-    gap: 10px;
     grid-template-columns: 200px 200px;
-    justify-content: center;
-
-
 }
 
-.box-shadow {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 20px;
-}
 
 .card {
     width: 320px;
     height: 400px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     font-size: 1.3rem;
     word-wrap: normal;
-
-
 }
 
 .car {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: 10px;
 }
 
@@ -143,12 +142,6 @@ p {
     margin-top: 10px;
 }
 
-.cars_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
 
 .car button {
     margin: 10px 0 0 0;
@@ -164,30 +157,39 @@ p {
     margin: 0 auto;
 }
 
-.block_margin {
+.block_margin_bottom {
     margin-bottom: 30px;
 }
 
-.text-center {
-    text-align: center;
+
+.flex-gap-20 {
+    gap: 20px
 }
 
-.text-flex {
-    display: flex;
-    gap: 10px;
-}
-
-.text-flex p {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 20px;
+.flex-gap-20 p {
+    margin-bottom: 20px;
 }
 
 .hide_text {
     color: white;
-
 }
 
 .hide_text:hover {
     color: black;
+}
+
+.items-end {
+    align-items: end;
+}
+
+.min-width-1200 {
+    min-width: 1200px;
+}
+
+.min-width-500 {
+    min-width: 500px;
+}
+
+.margin-top {
+    margin-top: 20px;
 }

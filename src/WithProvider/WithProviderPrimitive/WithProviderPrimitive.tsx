@@ -6,7 +6,7 @@ const LastComponent = () => {
   console.log('render LastComponent');
   const count = useContext(AccessContext);
   return <div className='child'>
-    Наш ребенок LastComponent - {count}
+    Ребенок LastComponent - {count}
 
   </div>;
 };
@@ -27,13 +27,15 @@ const ComponentWrapper = memo(() => {
 
 
 //Основная статья https://alexsidorenko.com/blog/react-render-context/
-//Хоть в реактдевтулз показывает ComponentWrapper рендерится, консоль лог говорит , что нет.(???)
+//Хоть в реактдевтулз показывает ComponentWrapper рендерится, консоль лог говорит , что нет.Почему так?
+//Всега нужно чекать Profiler. Так как AccessContext.Provider  это тоже компонент, то ререндерится он, а не ComponentWrapper,
+//а в UI кажется что рендерится ComponentWrapper
 const WithProviderPrimitive = () => {
-  console.log('render WithProvider');
+  console.log('render WithProviderPrimitive');
   const [count, setCount] = useState(0);
   const changeCount = () => setCount(count + 1);
   return (
-    <div className='with-border'>
+    <div className='with-border text-center car box-shadow'>
       state-{count} - в родителе
       <MyButton title='Click me!' onClick={changeCount} />
       <AccessContext.Provider value={count}>

@@ -8,7 +8,7 @@ const Test: FC<ExampleType> = ({title}) => {
     console.log(title);
   };
   return (
-    <MyButton title=' click me!' onClick={someFunc} />
+    <MyButton title='Click me one!' onClick={someFunc} />
   );
 };
 
@@ -17,12 +17,12 @@ const TestCallback: FC<ExampleType> = ({title}) => {
     console.log(title);
   }, []);
   return (
-    <MyButton title=' click me!' onClick={someFunc} />
+    <MyButton title='Click me two!' onClick={someFunc} />
   );
 };
 const ButtonUseCallbackTest = () => {
   return <div className='card card_button card_padding'>
-    <div className='block_margin'>
+    <div className='block_margin_bottom'>
       <Test title='Test без useCallback' />
       <TestCallback title='Test with useCallback' />
     </div>

@@ -4,6 +4,6 @@ interface IMyButton extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonEle
   title: string;
 }
 
-const MyButton = ({title, onClick, ...rest}: IMyButton) => <button onClick={onClick} {...rest}
-                                                                   className='btn b-1'>{title}</button>;
+const MyButton = ({title, ...rest}: IMyButton) => <button  {...rest}
+                                                           className='btn b-1'>{title}</button>;
 export default MyButton;

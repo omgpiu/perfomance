@@ -12,7 +12,7 @@ const InnerComponent = ({title}: { title: string }) => {
     <div>
       <div>
         <div>
-          {<img src={Logo} alt='Logo' width='180px' height='130px' />}
+          {<img src={Logo} alt='Logo' width='250px' height='200px' />}
         </div>
       </div>
     </div>

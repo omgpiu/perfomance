@@ -73,7 +73,7 @@ const Cars = () => {
 
       <div className='box-shadow text-center'>{TEXT.p1} <MyButton title='Я меняю поле в стейте'
                                                                   onClick={onChangeTitle} />{someBigData.title}</div>
-      <div className='text-flex'>
+      <div className='flex-gap-10'>
         <p>{TEXT.p2}</p>
         <p>{TEXT.p3}</p>
         <p>{TEXT.p4}</p>

@@ -5,12 +5,23 @@ import MyButton from '../../common/MyButton';
 const LastComponent = () => {
   console.log('render LastComponent');
   const {valueA, valueB, changeCount, changeCountPrev} = useContext(AccessContext);
-  return <div className='child'>
-    Наш ребенок LastComponent
-    - value:A {valueA}
-    -value:B {valueB}
-    <MyButton title='Update counter!' onClick={changeCount} />
-    <MyButton title='Update counter prev!' onClick={changeCountPrev} />
+  return <div className='child min-width-500'>
+    <div>
+      Ребенок LastComponent
+      <div>
+        <div>
+          VALUE-A {valueA}
+        </div>
+
+        VALUE-B {valueB}
+      </div>
+
+    </div>
+    <div>
+      <MyButton title='Update counter!' onClick={changeCount} />
+      <MyButton title='Update counter prev!' onClick={changeCountPrev} />
+    </div>
+
   </div>;
 };
 const SecondLevelComponent = () => {
@@ -30,7 +41,9 @@ const ComponentWrapper = memo(() => {
 
 
 //Основная статья https://alexsidorenko.com/blog/react-render-context/
-//Хоть в реактдевтулз показывает ComponentWrapper рендерится, консоль лог говорит , что нет.(???)
+//Хоть в реактдевтулз показывает ComponentWrapper рендерится, консоль лог говорит , что нет.Почему так?
+//Всега нужно чекать Profiler. Так как AccessContext.Provider  это тоже компонент, то ререндерится он, а не ComponentWrapper,
+//а в UI кажется что рендерится ComponentWrapper
 const WithProviderObj = () => {
   console.log('render WithProviderObj');
   const [count, setCount] = useState(0);
@@ -42,12 +55,12 @@ const WithProviderObj = () => {
   const changeCountPrev = () => setCount(prev => prev + 1);
 
   const updateValueA = () => setValueA(prev => {
-    if (prev === 'sit') return 'stand';
-    return 'sit';
+    if (prev === 'SIT') return 'STAND';
+    return 'SIT';
   });
   const updateValueB = () => setValueB(prev => {
-    if (prev === 'down') return 'up';
-    return 'down';
+    if (prev === 'DOWN') return 'UP';
+    return 'DOWN';
   });
   const memoValueToProvider = useMemo(() => {
     return {
@@ -58,13 +71,24 @@ const WithProviderObj = () => {
     };
   }, [valueA, valueB]);
   return (
-    <div className='with-border'>
-      state-{count} - в родителе
-      <MyButton title='Update counter!' onClick={changeCount} />
-      {valueA}
-      <MyButton title='Update A' onClick={updateValueA} />
-      {valueB}
-      <MyButton title='Update B' onClick={updateValueB} />
+    <div className='with-border text-center'>
+      <p className='margin-top'>ЗНАЧЕНИЯ СТЕЙТА В РОДИТЕЛЕ</p>
+      <div className='flex-wrapper items-end justify-center'>
+
+        <div className='flex-gap-10 flex-column text-center'>
+          {count}
+          <MyButton title='Update counter!' onClick={changeCount} />
+        </div>
+        <div className='flex-gap-10 flex-column text-center'>
+          {valueA}
+          <MyButton title='Update A' onClick={updateValueA} />
+        </div>
+        <div className='flex-gap-10 flex-column text-center'>
+          {valueB}
+          <MyButton title='Update B' onClick={updateValueB} />
+        </div>
+      </div>
+
       <AccessContext.Provider value={memoValueToProvider}>
         <ComponentWrapper />
       </AccessContext.Provider>

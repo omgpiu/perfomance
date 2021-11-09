@@ -8,10 +8,12 @@ import ButtonsUseCallbackTest from './ButtonUseCallbackTest';
 
 const ExampleWithMemoization = () => {
   return (
-    <div>
-      <ButtonsUseCallbackTest />
+    <>
+      <div className='block_margin'>
+        <ButtonsUseCallbackTest />
+      </div>
       <Cars />
-    </div>
+    </>
   );
 
 

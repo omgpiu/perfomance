@@ -32,21 +32,25 @@ p {
     top: 0;
     transition: all 300ms ease-in-out;
     box-shadow: 0 0.6em #c2bb11, 0 0.9em rgba(0, 0, 0, 0.4);
+
 }
 
 .btn:hover {
     background: #e5dc15;
     color: #0e79b2;
+
 }
 
 .btn.b-1:hover {
     top: 0.2em;
     box-shadow: 0 0.4em #c2bb11, 0 0.7em rgba(0, 0, 0, 0.4);
+
 }
 
 .btn.b-1:active {
     top: 0.4em;
     box-shadow: 0 0.2em #c2bb11, 0 0.5em rgba(0, 0, 0, 0.4);
+
 }
 
 
@@ -57,7 +61,7 @@ p {
     align-items: center;
 }
 
-.parent > div {
+.full_content {
     height: 100vh;
 }
 
@@ -88,6 +92,30 @@ p {
     width: 400px
 }
 
+.cars_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 40px 30px;
+}
+
+.car_container {
+    margin: 10px;
+    background-color: #fff;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 200px 200px;
+    justify-content: center;
+
+
+}
+
+.box-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
 .card {
     width: 320px;
     height: 400px;
@@ -109,6 +137,10 @@ p {
     align-items: center;
     justify-content: center;
     margin: 10px;
+}
+
+.car input {
+    margin-top: 10px;
 }
 
 .cars_wrapper {
@@ -134,4 +166,28 @@ p {
 
 .block_margin {
     margin-bottom: 30px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-flex {
+    display: flex;
+    gap: 10px;
+}
+
+.text-flex p {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.hide_text {
+    color: white;
+
+}
+
+.hide_text:hover {
+    color: black;
 }

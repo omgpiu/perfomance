@@ -6,7 +6,7 @@ import SecondSolution from './components/SecondSolution';
 
 const HiLoadExample = () => {
   return (
-    <div className='flex-wrapper'>
+    <div className='flex-wrapper full_content'>
       <Example title='Тут тормозит' />
       <Example title='А тут memo' memo />
       <FirstSolution />

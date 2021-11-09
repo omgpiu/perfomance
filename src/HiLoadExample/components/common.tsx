@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 
 const PayloadComponent = () => {
-  console.log('123');
   let now = performance.now();
   while (performance.now() - now < 300) {
     //delay for doing nothing

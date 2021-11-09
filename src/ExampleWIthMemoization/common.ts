@@ -12,6 +12,11 @@ export interface ICar {
 
 }
 
+export interface ISomeBigData {
+  title: string;
+  list: ICar[];
+}
+
 export type ListNameType = string | { inner_list_name: string }
 
 export interface ICarProps {
@@ -22,16 +27,18 @@ export interface ICarProps {
   // setCarList: React.Dispatch<React.SetStateAction<ICar[]>>;
   changeModel: (id: string, value: string) => void;
   nonPrimitive?: any[] | object;
-  listName: ListNameType;
+  listName?: ListNameType;
+  title: string;
 }
 
 export type CarPropsType = ICar & Omit<ICarProps, 'car'>
-export const listNameRender = (listName: ListNameType) => {
+export const listNameRender = (listName: ListNameType|any) => {
   if (typeof listName === 'string') {
     return listName;
   }
   return listName.inner_list_name;
 };
+
 export const CAR_LIST: ICar[] = [{
   id: '1',
   model: 'Porsche',
@@ -57,4 +64,9 @@ export const CAR_LIST: ICar[] = [{
     img: Volkswagen
   },
 ];
+export const SOME_BIG_DATA = {
+  title: 'SOME_BIG_DATA',
+  list: CAR_LIST
+};
+
 export const OUTSIDE_LIST = [{id: 10}];

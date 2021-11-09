@@ -5,18 +5,16 @@ interface IMyInput extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElemen
 }
 
 
-const MyInput = ({onChange, value, placeholder, ...rest}: IMyInput) => {
+const MyInput = ({placeholder, ...props}: IMyInput) => {
   return (
     <div className='form__group field'>
       <input type='input'
-             value={value}
              className='form__field'
-             placeholder={'Введите  цвет'}
+             placeholder={placeholder || 'Введите  цвет'}
              name='name'
              id='name'
-             onChange={onChange}
-             {...rest} />
-      <label htmlFor='name' className='form__label'>Введите цвет</label>
+             {...props} />
+      <label className='form__label'>{placeholder || 'Введите цвет'}</label>
     </div>
   );
 };

@@ -1,10 +1,18 @@
-# Getting Started with Create React App
+# Что это и для чего
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+После прочтения ознакомления со статьями и видео двух крутых разработчиков, мне показалось, что я все понял про
+мемоизацию и оптимизацию при работе со сложными компонентами в реакте. Но это только показалось, пары моментов, когда
+оптимизация не принесла желаемого результата, я решил создать маленькую песочницу, чтобы в разных вариантах потрогать
+руками работу с перфомансом на уровне компонент Все ссылки на статьи и видел упомянутые тут будут продублированны в
+компонентах, в конкретных случаях.  
+[Alex Sidorenko](https://alexsidorenko.com/)
+[Twitter](https://twitter.com/asidorenko_) - крутые статьи  
+[АйТи Синяк он же Александр Бальцевич](https://www.youtube.com/channel/UClgj-KWiNaOo9H1rz1ISO6Q)
+[Twitter](https://twitter.com/it_sin9k) - крутые статьи и видео
 
-## Available Scripts
+## Структура проекта
 
-In the project directory, you can run:
+Проект состоит из 4 основных частей
 
 ### `yarn start`
 
@@ -17,7 +25,8 @@ You will also see any lint errors in the console.
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more
+information.
 
 ### `yarn build`
 
@@ -33,14 +42,20 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will
+remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right
+into your project so you have full control over them. All of the commands except `eject` will still work, but they will
+point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you
+shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t
+customize it when you are ready for it.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can learn more in
+the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).

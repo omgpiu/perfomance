@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, memo } from 'react';
-import { CarPropsType } from './common';
+import { CarPropsType, listNameRender } from './common';
 import MyButton from '../common/MyButton';
 
 const CarFragmented: FC<CarPropsType> = memo(({
@@ -9,9 +9,11 @@ const CarFragmented: FC<CarPropsType> = memo(({
                                                 onCarClick,
                                                 setCount,
                                                 changeModel,
-                                                nonPrimitive
+                                                nonPrimitive,
+                                                listName
                                               }) => {
   console.log(model, 'render CarFragmented');
+
 
   const onClick = () => {
     onCarClick(model, id);
@@ -22,6 +24,7 @@ const CarFragmented: FC<CarPropsType> = memo(({
   };
   return (
     <div className='card car'>
+      {listNameRender(listName)}
       <img src={img} alt={model} width='150px' height='110px' />
       <input type='text' value={model} onChange={onChange} maxLength={10} />
       <MyButton title={model} onClick={onClick} />

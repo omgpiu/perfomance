@@ -57,10 +57,17 @@ p {
     padding: 20px;
 }
 
-.border1 {
-    border: 1px solid white;
-    transition: all 1s ease-in-out;
+.with-border {
+    margin: 50px auto;
+    border: 1px solid black;
+    width: 400px;
 }
+
+.child {
+    border: 1px solid black;
+    margin: 40px;
+}
+
 
 .flex-wrapper {
     display: flex;

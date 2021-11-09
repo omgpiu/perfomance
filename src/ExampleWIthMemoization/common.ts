@@ -9,7 +9,10 @@ export interface ICar {
   model: string;
   hp: number;
   img: string,
+
 }
+
+export type ListNameType = string | { inner_list_name: string }
 
 export interface ICarProps {
   car: ICar;
@@ -19,10 +22,16 @@ export interface ICarProps {
   // setCarList: React.Dispatch<React.SetStateAction<ICar[]>>;
   changeModel: (id: string, value: string) => void;
   nonPrimitive?: any[] | object;
+  listName: ListNameType;
 }
 
 export type CarPropsType = ICar & Omit<ICarProps, 'car'>
-
+export const listNameRender = (listName: ListNameType) => {
+  if (typeof listName === 'string') {
+    return listName;
+  }
+  return listName.inner_list_name;
+};
 export const CAR_LIST: ICar[] = [{
   id: '1',
   model: 'Porsche',

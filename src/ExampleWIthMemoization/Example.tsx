@@ -3,6 +3,9 @@ import { ExampleType } from '../types';
 import Cars from './Cars';
 import MyButton from '../common/MyButton';
 //Основная статья https://habr.com/ru/post/529950/
+//Дополнительная статья https://alexsidorenko.com/blog/react-render-usecallback/
+//Дополнительная статья  https://alexsidorenko.com/blog/react-list-rerender/
+//Дополнительная статья https://alexsidorenko.com/blog/react-render-props/
 
 //useCallback  этих случаях работать не будет
 const Test: FC<ExampleType> = ({title}) => {
@@ -25,7 +28,7 @@ const TestCallback: FC<ExampleType> = ({title}) => {
 };
 
 
-const ExampleUseCallback = () => {
+const ExampleWithMemoization = () => {
   return (
     <>
       <Test title='Test без useCallback' />
@@ -36,4 +39,4 @@ const ExampleUseCallback = () => {
 
 
 };
-export default ExampleUseCallback;
+export default ExampleWithMemoization;

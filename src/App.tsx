@@ -1,16 +1,20 @@
 import React from 'react';
-import ExampleUseCallback from './ExampleUseCallback/Example';
+import ExampleWithMemoization from './ExampleWIthMemoization/Example';
 import HiLoadExample from './HiLoadExample/HiLoadExample';
 import ExampleAppendToDom from './AttachToDom/AttachToDom';
+import WithProvider from './WithProvider';
+
 
 
 function App() {
 
   return (
-    <div className='parent'>
+    <div className='parent'
+    >
       <HiLoadExample />
-      <ExampleUseCallback />
+      <ExampleWithMemoization />
       <ExampleAppendToDom />
+      <WithProvider />
     </div>
   );
 

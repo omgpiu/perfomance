@@ -1,8 +1,9 @@
 import { ChangeEvent, FC, memo } from 'react';
-import { ICarProps } from './common';
+import { ICarProps, listNameRender } from './common';
 import MyButton from '../common/MyButton';
 
-const Car: FC<ICarProps> = memo(({car, onCarClick, setCount, changeModel}) => {
+
+const Car: FC<ICarProps> = memo(({car, onCarClick, setCount, changeModel, nonPrimitive, listName}) => {
   console.log(car.model, 'render Car');
   const onClick = () => {
     onCarClick(car, car.id);
@@ -14,6 +15,7 @@ const Car: FC<ICarProps> = memo(({car, onCarClick, setCount, changeModel}) => {
 
   return (
     <div className='card car'>
+      {listNameRender(listName)}
       <img src={car.img} alt={car.model} width='150px' height='110px' />
       <input type='text' value={car.model} data-parent={car.id} onChange={onChange} maxLength={10} />
       <MyButton title={car.model} onClick={onClick} />

@@ -14,7 +14,6 @@ const Test: FC<ExampleType> = ({title}) => {
   };
   return (
     <MyButton title=' click me!' onClick={someFunc} />
-
   );
 };
 

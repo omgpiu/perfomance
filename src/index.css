@@ -5,6 +5,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -33,6 +34,11 @@ p {
     box-shadow: 0 0.6em #c2bb11, 0 0.9em rgba(0, 0, 0, 0.4);
 }
 
+.pay-load {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .btn:hover {
     background: #e5dc15;
     color: #0e79b2;
@@ -50,11 +56,10 @@ p {
 
 
 .parent {
-    text-align: center;
-    margin: 0 auto;
-    transition: all 1s ease-in-out;
-    border: 1px solid red;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .with-border {
@@ -71,7 +76,12 @@ p {
 
 .flex-wrapper {
     display: flex;
-    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+
+    align-items: center;
+    align-content: center;
+    justify-self: center;
 }
 
 .width-center {
@@ -80,13 +90,18 @@ p {
 }
 
 .card {
+    width: 320px;
+    height: 400px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3rem;
 }
 
 .car {
-    width: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;

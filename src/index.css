@@ -34,11 +34,6 @@ p {
     box-shadow: 0 0.6em #c2bb11, 0 0.9em rgba(0, 0, 0, 0.4);
 }
 
-.pay-load {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .btn:hover {
     background: #e5dc15;
     color: #0e79b2;
@@ -60,6 +55,10 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.parent > div {
+    height: 100vh;
 }
 
 .with-border {
@@ -99,6 +98,9 @@ p {
     flex-direction: column;
     align-items: center;
     font-size: 1.3rem;
+    word-wrap: normal;
+
+
 }
 
 .car {
@@ -119,4 +121,17 @@ p {
 .car button {
     margin: 10px 0 0 0;
     width: 130px;
+}
+
+.pay-load {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card_button {
+    margin: 0 auto;
+}
+
+.block_margin {
+    margin-bottom: 30px;
 }

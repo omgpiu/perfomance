@@ -8,7 +8,7 @@ const ColorPicker = ({children}: { children: ReactNode }) => {
   console.log('ColorPicker С чилдрен');
   const [color, setColor] = useState('');
   return <div className='card'>
-    <p style={{color}}>Второй с чилдрен</p>
+    <p style={{color}}>Решение без мемо с чилдрен</p>
     <MyInput
       value={color}
       onChange={e => setColor(e.target.value)} />

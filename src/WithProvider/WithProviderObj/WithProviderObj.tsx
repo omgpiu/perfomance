@@ -12,7 +12,6 @@ const LastComponent = () => {
         <div>
           VALUE-A {valueA}
         </div>
-
         VALUE-B {valueB}
       </div>
 

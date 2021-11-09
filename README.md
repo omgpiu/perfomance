@@ -32,7 +32,7 @@
 
 1) HiLoadExample:  
    [Статья Дена Абрамова](https://overreacted.io/before-you-memo/)  
-   [Видео Синяка на статью Дена](https://www.youtube.com/watch?v=JzBEbo4enQY&t=178s)
+   [Видео Синяка на статью Дена](https://www.youtube.com/watch?v=JzBEbo4enQY&)
 2) ExampleWithMemoization:  
    [Статья Alex Sidorenko Ch.1](https://alexsidorenko.com/blog/react-render-always-rerenders/)  
    [Статья Alex Sidorenko Ch.2](https://alexsidorenko.com/blog/react-render-props/)  
@@ -40,13 +40,24 @@
    [Статья Alex Sidorenko Ch.4](https://alexsidorenko.com/blog/react-render-usecallback/)  
    [Статья Синяка](https://habr.com/ru/post/529950/)  
    [Видео Синяка про useCallback](https://www.youtube.com/watch?v=2Wp7QPTkpms)
+   [Видео Синяка Блок схема по использованию memo() && Боевые примеры](https://www.youtube.com/watch?v=CMqlMhrMoyY)
    [Видео Синяка про key](https://www.youtube.com/watch?v=OtAlPwW8DNU&t=296s)
-3) WithProvider:  
+4) WithProvider:  
    [Статья Alex Sidorenko Ch.5](https://alexsidorenko.com/blog/react-render-context/)
-4) AttachToDom:    
+5) AttachToDom:    
    Без видео статья будет не совсем понятна  
    [Видео Синяка](https://www.youtube.com/watch?v=A0W2n2azH5s)  
    [Статья Alex Sidorenko Ch.6](https://alexsidorenko.com/blog/react-render-dom/)
 
 Ну и не менее важная статья
 от [Kent C. Dodds](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
+
+# ОБЯЗАТЕЛЬНЫ К ПРОСМОТРУ
+
+[Видео Синяка Все ли вы знаете о React key?](https://www.youtube.com/watch?v=OtAlPwW8DNU)  
+[Видео Синяка про о React Reconciliation](https://www.youtube.com/watch?v=NPXJnKytER4)  
+[Видео Синяка Какая настоящая цена useMemo?](https://www.youtube.com/watch?v=i6DPqqbdIyw)  
+[Видео Синяка useMemo - исходники, альтернативное использование](https://www.youtube.com/watch?v=V426Pl3X6qQ)  
+[Видео Синяка React.memo это вам не useMemo](https://www.youtube.com/watch?v=Hm769uj6WPo)  
+[Видео Синяка Чем отличается SimpleMemoComponent от MemoComponent?](https://www.youtube.com/watch?v=LhZ4Xk5CZU8)  
+[Видео Синяка Станет ли memo() дэфолтным поведением реакт компонента?](https://www.youtube.com/watch?v=uEeZ2TUkOCE)  

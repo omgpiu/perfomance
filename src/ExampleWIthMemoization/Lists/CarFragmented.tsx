@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, memo, useEffect } from 'react';
-import { CarPropsType, listNameRender } from './common';
-import MyButton from '../common/MyButton';
+import { CarPropsType, listNameRender } from '../common';
+import MyButton from '../../common/MyButton';
 
 const CarFragmented: FC<CarPropsType> = memo(({
                                                 title,

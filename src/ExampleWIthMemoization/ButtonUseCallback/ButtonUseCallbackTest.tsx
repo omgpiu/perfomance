@@ -1,7 +1,7 @@
 //useCallback  этих случаях работать не будет
 import { FC, useCallback } from 'react';
-import { ExampleType } from '../types';
-import MyButton from '../common/MyButton';
+import { ExampleType } from '../../types';
+import MyButton from '../../common/MyButton';
 
 const Test: FC<ExampleType> = ({title}) => {
   const someFunc = () => {

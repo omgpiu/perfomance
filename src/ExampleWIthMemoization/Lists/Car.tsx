@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, memo, useEffect } from 'react';
-import { ICarProps, listNameRender } from './common';
-import MyButton from '../common/MyButton';
+import { ICarProps, listNameRender } from '../common';
+import MyButton from '../../common/MyButton';
 
 
 const Car: FC<ICarProps> = memo(({car, title, onCarClick, setCount, changeModel, nonPrimitive, listName}) => {

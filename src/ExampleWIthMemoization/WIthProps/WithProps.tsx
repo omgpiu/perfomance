@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import Logo from '../../assets/placeholder.jpg';
 import MyButton from '../../common/MyButton';
 
@@ -57,6 +57,8 @@ const WithProps = () => {
     title: 'Заголовок карточки',
     data
   };
+
+  const opt2 = useMemo(() => ({...options}), []);
   const title = 'Заголовок карточки';
   return <div className='card_button card_padding flex-wrapper flex-column box-shadow'>
     <p>{user.name} {user.role}</p>

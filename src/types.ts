@@ -4,6 +4,7 @@ export interface ITitle {
 
 export type ExampleType = ITitle & {
   memo?: boolean
+  changeCount?: () => void
 }
 
 

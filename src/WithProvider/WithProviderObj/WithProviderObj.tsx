@@ -48,9 +48,10 @@ const WithProviderObj = () => {
   const [count, setCount] = useState(0);
   const [valueA, setValueA] = useState('sit');
   const [valueB, setValueB] = useState('down');
-  //так как функция будет в кеше, стейт обновлятся не будет
+
   const changeCount = () => setCount(count + 1);
-  //так как стучимся к преву все будет рабоать, не рендеря ребенка
+  //так как мы в value провайдера передаем обьект с методами  changeCountPrev  и changeCount дополнительно оборачивать их в юзколбек не нужно
+
   const changeCountPrev = () => setCount(prev => prev + 1);
 
   const updateValueA = () => setValueA(prev => {
@@ -61,6 +62,7 @@ const WithProviderObj = () => {
     if (prev === 'DOWN') return 'UP';
     return 'DOWN';
   });
+
   const memoValueToProvider = useMemo(() => {
     return {
       valueA,
@@ -69,6 +71,14 @@ const WithProviderObj = () => {
       changeCountPrev,
     };
   }, [valueA, valueB]);
+  // const memoValueToProvider = {
+  //   valueA,
+  //   valueB,
+  //   changeCount,
+  //   changeCountPrev,
+  // };
+
+
   return (
     <div className='with-border text-center'>
       <p className='margin-top'>ЗНАЧЕНИЯ СТЕЙТА В РОДИТЕЛЕ</p>
@@ -87,7 +97,6 @@ const WithProviderObj = () => {
           <MyButton title='Update B' onClick={updateValueB} />
         </div>
       </div>
-
       <AccessContext.Provider value={memoValueToProvider}>
         <ComponentWrapper />
       </AccessContext.Provider>

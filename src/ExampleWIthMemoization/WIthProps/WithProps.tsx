@@ -15,6 +15,7 @@ interface IChildWithProps {
     showPicture: boolean
     title: string
     data?: number[]
+    userName?: string
   };
 }
 
@@ -28,9 +29,11 @@ const ChildWithProps = memo(({options}: IChildWithProps) => {
   return <div>
     <p className='text-center'>{options.title
     }</p>
+    <p className='text-center'>{options.userName}</p>
     {options.showPicture && <img src={Logo} alt='Logo' width='250px' height='200px' />}
   </div>;
 });
+
 const SecondChildWithProps = memo(({showPicture, title, data}: ISecondChildWithProps) => {
   return <div>
     <p className='text-center '>{title}</p>
@@ -50,7 +53,9 @@ const WithProps = () => {
   };
   // const data = Array.from(Array(100).keys());
   const data = undefined;
+
   const showPicture = user.role === 'director';
+
   const options = {
     showPicture,
     userName: user.name,
@@ -58,7 +63,7 @@ const WithProps = () => {
     data
   };
 
-  const opt2 = useMemo(() => ({...options}), []);
+  const opt2 = useMemo(() => ({...options}), [user]);
   const title = 'Заголовок карточки';
   return <div className='card_button card_padding flex-wrapper flex-column box-shadow'>
     <p>{user.name} {user.role}</p>
@@ -66,15 +71,15 @@ const WithProps = () => {
       <div className='card card_button card_padding'>
         <MyButton title='Сменить роль пользователя' onClick={changeRole} />
         <MyButton title='Сменить имя пользователя' onClick={changeName} />
-        <ChildWithProps {...{options}} />
+        <ChildWithProps options={opt2} />
       </div>
       <div className='card card_button card_padding'>
         <MyButton title='Сменить роль пользователя' onClick={changeRole} />
         <MyButton title='Сменить имя пользователя' onClick={changeName} />
-        <SecondChildWithProps title={title} data={data} showPicture={showPicture} />
-      </div>
-    </div>
+        <SecondChildWithProps {...{title: options.title, data: options.data, showPicture: showPicture}} />
+          </div>
+          </div>
 
-  </div>;
-};
-export default WithProps;
+          </div>;
+        };
+        export default WithProps;;

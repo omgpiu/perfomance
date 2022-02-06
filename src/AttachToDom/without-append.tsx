@@ -14,12 +14,16 @@ export const NotAppendToDomAmpersands = ({isShowText}: { isShowText: boolean }) 
     </div>
   );
 };
+
+
 //порядок не компонент не поменялся - не пе аппендим
 export const NotAppendToDom = ({isShowText}: { isShowText: boolean }) => {
   useEffect(() => {
     console.log('Четвертая бибика effect mount');
     return () => console.log('Четвертая бибика effect unmount');
   }, []);
+
+
   if (isShowText) {
     return (
       <div className='div-1'>
@@ -41,7 +45,7 @@ export const NotAppendWithKey = ({isShowText}: { isShowText: boolean }) => {
     console.log('Пятая бибика effect mount');
     return () => console.log('Пятая бибика effect unmount');
   }, []);
-  //так как у нас span и InnerComponent поменялись местами, происходит маунт-анмаунт
+
   if (isShowText) {
     return (
       <div className='div-1'>

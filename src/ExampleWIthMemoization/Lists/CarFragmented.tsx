@@ -15,7 +15,7 @@ const CarFragmented = memo(({
                                 listName
                             }: CarPropsType) => {
     console.log(model, title, 'render');
-
+    console.log(listName,'listNAME')
     useEffect(() => {
         console.log('CarFragmented mount');
         return console.log('CarFragmented unmount');

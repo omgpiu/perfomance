@@ -10,7 +10,9 @@ const Lists = () => {
     console.log('cars renders');
     const [, setCount] = useState(0);
     const [, forceUpdate] = useState({})
+    //setState из коробки закеширована, поэтому нет смысла оборачивать в useCallback
     const [someBigData, setSomeBigData] = useState<ISomeBigData>(SOME_BIG_DATA);
+
 
     const onCarClick = useCallback((car: string | ICar, id: string) => {
         //Удаляем
@@ -22,6 +24,7 @@ const Lists = () => {
         }
         console.log(car.model, 'console log parent');
     }, []);
+
     //Уберем useCallback  и новая ссылка на функцию будет причиной ререндера ребенка
     const changeModel = useCallback((id: string, value: string) => {
         setSomeBigData((prevState => ({
@@ -35,16 +38,14 @@ const Lists = () => {
     }, []);
 
     //Функции, которые не передаем ниже по дереву нет смысла оборачивать в useCallback в этом кейсе useCallback не работает
-    //Так же тут setState , что не требует обертки useCallback
-    const onChangeTitle = () => {
+    const forceUpdateHandler = () => {
         forceUpdate({})
 
     };
 
 
     const INNER_LIST = {inner_list_name: 'Моя мечта'};
-    //Если в депенденси useMemo передать не кешированный объект или примитив, useMemo будет создавать новую ссылку заново на каждый рендер
-    //что аннулирует весь смысл в юзмемо
+    //Если в депенденси useMemo новую ссылку объект, useMemo работать не будет
     // Депенденси работают аналогично memo - примитивы по значению, не примитивы по ссылкам
     const MEMO_INNER_LIST = useMemo(() => INNER_LIST, []);
 
@@ -53,7 +54,7 @@ const Lists = () => {
             <div className='box-shadow text-center'>
                 <p>При нажатии я ререндерю всю страницу</p>
                 <MyButton title='FORCE UPDATE'
-                          onClick={onChangeTitle}/>
+                          onClick={forceUpdateHandler}/>
             </div>
             <CarsListContainer>
                 <p>Пропсы через спред</p>
@@ -94,7 +95,6 @@ const Lists = () => {
                         />);
                     })}
                 </CarContainer>
-
                 <CarContainer>
                     {someBigData.list.map((car => {
                         console.log('render Bad');

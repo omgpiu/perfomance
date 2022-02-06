@@ -63,8 +63,8 @@ p {
 
 .child {
     border: 1px solid black;
-    margin: 40px;
-    padding: 20px;
+    margin: 20px;
+    padding: 10px;
 }
 
 
@@ -94,7 +94,7 @@ p {
     margin: 10px;
     background-color: #fff;
     display: grid;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: auto auto;
 }
 
 
@@ -167,3 +167,6 @@ p {
     margin-top: 20px;
 }
 
+.w-300 {
+    width: 300px;
+}

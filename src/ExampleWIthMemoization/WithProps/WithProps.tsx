@@ -3,29 +3,8 @@ import { SuperCar } from '../../assets';
 
 
 import MyButton from "../../Common/Button/MyButton";
+import { IChildWithProps, ISecondChildWithProps, IUser } from "./types";
 
-type RoleType = 'director' | 'admin'
-type NameType = 'Petr Mihailovich' | 'Vovan'
-
-interface IUser {
-    name: NameType;
-    role: RoleType;
-}
-
-interface IChildWithProps {
-    options: {
-        showPicture: boolean
-        title: string
-        data?: number[]
-        userName?: string
-    };
-}
-
-interface ISecondChildWithProps {
-    showPicture: boolean;
-    title: string;
-    data?: number[];
-}
 
 const ChildWithProps = memo(({options}: IChildWithProps) => {
     return <div>
@@ -42,7 +21,7 @@ const SecondChildWithProps = memo(({showPicture, title, data}: ISecondChildWithP
         {showPicture && <img src={SuperCar} alt='Logo' width='250px' height='200px'/>}
     </div>;
 });
-//имплементировать useMemo для data и options
+// Нужен ли тут useMemo и useCallback
 const WithProps = () => {
     const [user, setUser] = useState<IUser>({name: 'Petr Mihailovich', role: 'director'});
     const changeRole = () => {
@@ -55,7 +34,6 @@ const WithProps = () => {
     };
     // const data = Array.from(Array(100).keys());
     const data = undefined;
-
     const showPicture = user.role === 'director';
 
     const options = {
@@ -67,6 +45,8 @@ const WithProps = () => {
 
     const opt2 = useMemo(() => ({...options}), [user]);
     const title = 'Заголовок карточки';
+    //если мы передаем пропсы в чилда, но не используем, либо "не принимаем", ререндеры все равно будут, если правильно не передавать,
+    // а лучше удалять неиспользуемые пропсы
     return <div className='card_button card_padding flex-wrapper flex-column box-shadow'>
         <p>{user.name} {user.role}</p>
         <div className='flex-wrapper'>

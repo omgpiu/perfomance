@@ -1,11 +1,9 @@
-import WithProviderPrimitive from './WithProviderPrimitive/WithProviderPrimitive';
-import WithProviderObj from './WithProviderObj/WithProviderObj';
+import WithProviderObj from './WithProviderObj';
 import React from 'react';
 
 const WithProvider = () => {
   return (
-    <div className='full_content box-shadow flex-wrapper min-width-1200'>
-      <WithProviderPrimitive />
+    <div className='flex-wrapper min-width-1200'>
       <WithProviderObj />
     </div>
   );

@@ -1,4 +1,4 @@
-import {Address} from './enums';
+import { Address } from './enums';
 
 interface INavigation {
     title: string;
@@ -20,15 +20,15 @@ export const NAVIGATION: INavigation[] = [
         address: Address.Lists,
     },
     {
-        title: 'WithProps',
-        address: Address.WithProps,
-    },
-    {
         title: 'Append',
         address: Address.Append,
     },
     {
         title: 'Context',
         address: Address.Context,
+    },
+    {
+        title: 'Exercise',
+        address: Address.WithProps,
     },
 ];

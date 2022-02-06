@@ -47,7 +47,7 @@ const WithProps = () => {
     const title = 'Заголовок карточки';
     //если мы передаем пропсы в чилда, но не используем, либо "не принимаем", ререндеры все равно будут, если правильно не передавать,
     // а лучше удалять неиспользуемые пропсы
-    return <div className='card_button card_padding flex-wrapper flex-column box-shadow'>
+    return <div className='card_button card_padding flex-wrapper flex-column'>
         <p>{user.name} {user.role}</p>
         <div className='flex-wrapper'>
             <div className='card card_button card_padding'>

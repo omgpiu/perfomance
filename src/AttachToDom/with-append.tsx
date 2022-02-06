@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 import InnerComponent from './common';
 
 //лишняя обертка перед InnerComponent заставит размаунтить и замаунтить весь узер div-2 и все что внутри

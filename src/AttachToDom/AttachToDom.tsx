@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react';
-import MyButton from '../common/MyButton';
+import MyButton from '../Common/Button/MyButton';
 import { AppendToDom, AppendToDomReversSpan } from './with-append';
 import { NotAppendToDom, NotAppendToDomAmpersands, NotAppendWithKey } from './without-append';
 

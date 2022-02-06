@@ -1,3 +1,9 @@
+html {
+
+    min-height: 100%;
+
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +11,8 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #a9c9ff;
+    background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%, #a9c9ff 0%, #ffbbec 100%);
 
 }
 
@@ -18,40 +26,6 @@ p {
 
 }
 
-.btn {
-    color: #e5dc15;
-    background: #0e79b2;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin: 1rem;
-    padding: 0.5rem;
-    border: 2px solid #e5dc15;
-    border-radius: 0.5rem;
-    position: relative;
-    top: 0;
-    transition: all 300ms ease-in-out;
-    box-shadow: 0 0.6em #c2bb11, 0 0.9em rgba(0, 0, 0, 0.4);
-
-}
-
-.btn:hover {
-    background: #e5dc15;
-    color: #0e79b2;
-
-}
-
-.btn.b-1:hover {
-    top: 0.2em;
-    box-shadow: 0 0.4em #c2bb11, 0 0.7em rgba(0, 0, 0, 0.4);
-
-}
-
-.btn.b-1:active {
-    top: 0.4em;
-    box-shadow: 0 0.2em #c2bb11, 0 0.5em rgba(0, 0, 0, 0.4);
-
-}
 
 .parent, .flex-wrapper, .card, .car, .flex-gap-10, .flex-gap-20, .cars_wrapper {
     display: flex;
@@ -80,9 +54,6 @@ p {
     align-items: center;
 }
 
-.full_content {
-    height: 100vh;
-}
 
 .with-border {
     margin: 50px auto;
@@ -159,6 +130,8 @@ p {
 
 .block_margin_bottom {
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
 }
 
 

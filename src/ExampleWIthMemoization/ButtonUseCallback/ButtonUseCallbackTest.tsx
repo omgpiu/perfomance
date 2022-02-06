@@ -1,35 +1,43 @@
-//useCallback  этих случаях работать не будет
-import { FC, useCallback } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { ExampleType } from '../../types';
-import MyButton from '../../common/MyButton';
+import MyButton from '../../Common/Button/MyButton';
+import { ButtonExampleCard } from "./styles";
+
 
 const Test: FC<ExampleType> = ({title}) => {
-  const someFunc = () => {
-    console.log(title);
-  };
-  return (
-    <MyButton title='Click me one!' onClick={someFunc} />
-  );
+    const [count, setCount] = useState(0)
+    const someFunc = () => {
+        console.log(title);
+        setCount(count + 1)
+    };
+    return (
+        <MyButton title={`Click me non-useCallback ${count}`} onClick={someFunc}/>
+    );
 };
 
 const TestCallback: FC<ExampleType> = ({title}) => {
-  const someFunc = useCallback(() => {
-    console.log(title);
-  }, []);
-  return (
-    <MyButton title='Click me two!' onClick={someFunc} />
-  );
+    const [count, setCount] = useState(0)
+    const someFunc = useCallback(() => {
+        console.log(title);
+        setCount(prev => prev + 1)
+    }, []);
+    return (
+        <MyButton title={`Click me useCallback ${count}`} onClick={someFunc}/>
+    );
 };
+
+
 const ButtonUseCallbackTest = () => {
-  return <div className='card card_button card_padding'>
-    <div className='block_margin_bottom'>
-      <Test title='Test без useCallback' />
-      <TestCallback title='Test with useCallback' />
-    </div>
-    <p>
-      Кнопки - это два отдельных компонента, которые сами по себе и не прокидываю никуда пропсы.
-      Давайте угадаем, какая из кнопок с useCallback и как это повлияет на нашу производительность?
-    </p>
-  </div>;
+    return <ButtonExampleCard>
+        <div className='block_margin_bottom'>
+            <Test title='Test без useCallback'/>
+            <TestCallback title='Test with useCallback'/>
+        </div>
+        <p>
+            Кнопки - это два отдельных компонента, которые сами по себе и не прокидываю никуда пропсы.
+            Давайте угадаем, какая из кнопок с useCallback и как это повлияет на нашу производительность?
+        </p>
+        <p><b>Какое поведением мы ожидаем?</b></p>
+    </ButtonExampleCard>;
 };
 export default ButtonUseCallbackTest;

@@ -1,6 +1,6 @@
 import { memo, useContext, useMemo, useState } from 'react';
-import AccessContext from '../../common/AccessContext';
-import MyButton from '../../common/MyButton';
+import AccessContext from '../../Common/Context/AccessContext';
+import MyButton from '../../Common/Button/MyButton';
 
 const LastComponent = () => {
   console.log('render LastComponent');

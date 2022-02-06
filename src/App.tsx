@@ -1,22 +1,19 @@
 import React from 'react';
-import ExampleWithMemoization from './ExampleWIthMemoization/Example';
-import HiLoadExample from './HiLoadExample/HiLoadExample';
-import ExampleAppendToDom from './AttachToDom/AttachToDom';
-import WithProvider from './WithProvider';
-
+import {SplitScreen} from './Common/SpliteScreen/SplitedScreen';
+import Header from "./Common/Header/Header";
+import {MainRoute} from "./Common/Routes/MainRoute";
 
 
 function App() {
 
-  return (
-    <div className='parent'
-    >
-      <HiLoadExample />
-      <ExampleWithMemoization />
-      <ExampleAppendToDom />
-      <WithProvider />
-    </div>
-  );
+    return (
+        <>
+            <SplitScreen secondSize={1} firstSize={2} withHeader>
+                <Header/>
+                <MainRoute/>
+            </SplitScreen>
+        </>
+    );
 
 }
 

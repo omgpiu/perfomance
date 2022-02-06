@@ -1,9 +1,10 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
+import { Button } from './styles';
+
 
 interface IMyButton extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  title: string;
+    title: string;
 }
 
-const MyButton = ({title, ...rest}: IMyButton) => <button  {...rest}
-                                                           className='btn b-1'>{title}</button>;
+const MyButton = ({title, ...rest}: IMyButton) => <Button  {...rest}>{title}</Button>;
 export default MyButton;

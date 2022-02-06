@@ -1,6 +1,6 @@
 import { memo, useContext, useState } from 'react';
-import AccessContext from '../../common/AccessContext';
-import MyButton from '../../common/MyButton';
+import AccessContext from '../../Common/Context/AccessContext';
+import MyButton from '../../Common/Button/MyButton';
 
 const LastComponent = () => {
   console.log('render LastComponent');
@@ -28,7 +28,7 @@ const ComponentWrapper = memo(() => {
 
 //Основная статья https://alexsidorenko.com/blog/react-render-context/
 //Хоть в реактдевтулз показывает ComponentWrapper рендерится, консоль лог говорит , что нет.Почему так?
-//Всега нужно чекать Profiler. Так как AccessContext.Provider  это тоже компонент, то ререндерится он, а не ComponentWrapper,
+//Всегда нужно чекать Profiler. Так как AccessContext.Provider  это тоже компонент, то ререндерится он, а не ComponentWrapper,
 //а в UI кажется что рендерится ComponentWrapper
 const WithProviderPrimitive = () => {
   console.log('render WithProviderPrimitive');

@@ -4,7 +4,7 @@ export const CarContainer = styled.div`
   margin: 10px;
   background-color: #fff;
   display: grid;
-  grid-template-columns: 200px 200px;
+  grid-template-columns: auto auto;
   gap: 10px;
 `
 export const CarsListContainer = styled.div`

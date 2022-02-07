@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router";
 import { Address } from "../enums";
 import ExpensiveChild from "../../ExpensiveChild/ExpensiveChild";
-import ExampleWithMemoization from "../../ExampleWIthMemoization/Example";
 import ExampleAppendToDom from "../../AttachToDom/AttachToDom";
 import WithContext from "../../WithProvider";
 import React from "react";

@@ -1,6 +1,5 @@
-
-import {NavLink} from 'react-router-dom';
-import {styled} from "linaria/react";
+import { NavLink } from 'react-router-dom';
+import { styled } from "linaria/react";
 
 export const HeaderWrapper = styled.header`
   background-color: #111;
@@ -10,7 +9,7 @@ export const HeaderWrapper = styled.header`
   height: 80px;
   display: flex;
   justify-content: space-around;
-  
+
 `;
 
 // @ts-ignore

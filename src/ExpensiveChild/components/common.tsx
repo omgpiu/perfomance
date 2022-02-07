@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, { memo } from 'react';
 
 export const CARD_TEXT = {
     freeze: 'В этом кейсе нет никаких оберток, у нас выполняется синхронный блокирующий код, из-за рендера родителя, этот\n' +

@@ -1,7 +1,7 @@
 import React from 'react';
-import {SplitScreen} from './Common/SpliteScreen/SplitedScreen';
+import { SplitScreen } from './Common';
 import Header from "./Common/Header/Header";
-import {MainRoute} from "./Common/Routes/MainRoute";
+import { MainRoute } from "./Common";
 
 
 function App() {

@@ -26,6 +26,10 @@ export const NAVIGATION: INavigation[] = [
     {
         title: 'Context',
         address: Address.Context,
+
+    }, {
+        title: 'FastCtx',
+        address: Address.FastCtx,
     },
     {
         title: 'Exercise',

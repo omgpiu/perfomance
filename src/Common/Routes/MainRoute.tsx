@@ -6,6 +6,7 @@ import WithContext from "../../WithProvider";
 import React from "react";
 import { ButtonUseCallbackTest, WithProps } from "../../ExampleWIthMemoization";
 import Lists from "../../ExampleWIthMemoization/Lists/Lists";
+import { FastContextContent } from "../../FastContext";
 
 export const MainRoute = () => {
     return (
@@ -16,6 +17,7 @@ export const MainRoute = () => {
             <Route path={Address.WithProps} element={<WithProps/>}/>
             <Route path={Address.Append} element={<ExampleAppendToDom/>}/>
             <Route path={Address.Context} element={<WithContext/>}/>
+            <Route path={Address.FastCtx} element={<FastContextContent/>}/>
         </Routes>
     );
 };

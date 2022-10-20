@@ -5,4 +5,5 @@ export const enum Address {
     WithProps = '/with-props',
     Append = '/append',
     Context = '/context',
+    FastCtx='/fast-context'
 }

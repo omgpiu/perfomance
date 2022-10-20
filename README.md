@@ -10,13 +10,14 @@
 
 ## Структура проекта
 
-Проект состоит из 4 основных частей
+Проект состоит из 5 основных частей
 
 1) ExpensiveChild - общий пример как работать с мемо и как можно сделать то же самое, но без него.
 2) ExampleWithMemoization - более глубокие кейсы с мемо, работа со списками, применение useCallback,useMemo, внешние
    данные,депенденси лист.
 3) WithProvider - продолжение работы с мемо при работе с React.Provider.
 4) AttachToDom - простые действия, как облегчить работу реакту при вариантивнов рендеринге.
+5) FastGenericContext - если вдруг нужен контекст, для часто обновляемых данных с минимальным ререндером. Отлично заходит для вложенных форм.
 
 Для понимания когда происходит рендер нужно установить
 расшение [ReactDevTools - Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
@@ -40,12 +41,15 @@
    [Видео Синяка про useCallback](https://www.youtube.com/watch?v=2Wp7QPTkpms)
    [Видео Синяка Блок схема по использованию memo() && Боевые примеры](https://www.youtube.com/watch?v=CMqlMhrMoyY)
    [Видео Синяка про key](https://www.youtube.com/watch?v=OtAlPwW8DNU&t=296s)
-4) WithProvider:  
+3) WithProvider:  
    [Статья Alex Sidorenko Ch.5](https://alexsidorenko.com/blog/react-render-context/)
-5) AttachToDom:    
+4) AttachToDom:    
    Без видео статья будет не совсем понятна  
    [Видео Синяка](https://www.youtube.com/watch?v=A0W2n2azH5s)  
    [Статья Alex Sidorenko Ch.6](https://alexsidorenko.com/blog/react-render-dom/)
+5) FastGenericContext:
+   [Видео](https://www.youtube.com/watch?v=ZKlXqrcBx88)
+
 
 Ну и не менее важная статья
 от [Kent C. Dodds](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
